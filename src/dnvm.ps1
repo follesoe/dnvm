@@ -81,7 +81,7 @@ $FullVersion="$ProductVersion-$BuildVersion"
 
 Set-Variable -Option Constant "CommandName" ([IO.Path]::GetFileNameWithoutExtension($ScriptPath))
 Set-Variable -Option Constant "CommandFriendlyName" ".NET Version Manager"
-Set-Variable -Option Constant "DefaultUserDirectoryName" ".dnx"
+Set-Variable -Option Constant "DefaultUserDirectoryName" "dnx"
 Set-Variable -Option Constant "DefaultGlobalDirectoryName" "Microsoft DNX"
 Set-Variable -Option Constant "OldUserDirectoryNames" @(".kre", ".k")
 Set-Variable -Option Constant "RuntimePackageName" "dnx"
@@ -1867,7 +1867,7 @@ $cmd = $args[0]
 
 $cmdargs = @()
 if($args.Length -gt 1) {
-    # Combine arguments, ensuring any containing whitespace or parenthesis are correctly quoted 
+    # Combine arguments, ensuring any containing whitespace or parenthesis are correctly quoted
     ForEach ($arg In $args[1..($args.Length-1)]) {
         if ($arg -match "[\s\(\)]") {
             $cmdargs += """$arg"""
